@@ -1,0 +1,58 @@
+<form [formGroup]="createForm" (ngSubmit)="submit()" class="employee-form">
+  <h2>Create Employee</h2>
+<div class="test">
+  <!-- Name and Email Fields in One Row -->
+  <div class="form-row">
+    <!-- Name Field -->
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" required />
+      <div *ngIf="createForm.controls['name'].invalid && createForm.controls['name'].touched" class="error-message">
+        <small>Name is required.</small>
+      </div>
+    </div>
+
+    <!-- Email Field -->
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" required />
+      <div *ngIf="createForm.controls['email'].invalid && createForm.controls['email'].touched" class="error-message">
+        <small>Please enter a valid email.</small>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+  <!-- Mobile Number Field -->
+  <div class="form-group">
+    <label for="mobileNumber">Mobile Number:</label>
+    <input id="mobileNumber" formControlName="mobileNumber" required />
+    <div *ngIf="createForm.controls['mobileNumber'].invalid && createForm.controls['mobileNumber'].touched" class="error-message">
+      <small>Mobile number is required.</small>
+    </div>
+  </div>
+
+  <!-- Home Address Field -->
+  <div class="form-group">
+    <label for="homeAddress">Home Address:</label>
+    <input id="homeAddress" formControlName="homeAddress" required />
+    <div *ngIf="createForm.controls['homeAddress'].invalid && createForm.controls['homeAddress'].touched" class="error-message">
+      <small>Address is required.</small>
+    </div>
+  </div>
+</div>
+  <!-- File Upload Field -->
+  <div class="form-group">
+    <label for="file">Upload File:</label>
+    <input id="file" type="file" (change)="onFileSelected($event)" required />
+    <div *ngIf="createForm.controls['file'].invalid && createForm.controls['file'].touched" class="error-message">
+      <small>File is required.</small>
+    </div>
+  </div>
+</div>
+
+  <!-- Action Buttons -->
+  <div class="form-actions">
+    <button type="submit" [disabled]="createForm.invalid" class="submit-btn">Create</button>
+    <button type="button" (click)="cancel()" class="cancel-btn">Cancel</button>
+  </div>
+</form>

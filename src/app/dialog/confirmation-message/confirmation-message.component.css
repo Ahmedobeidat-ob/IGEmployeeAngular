@@ -1,0 +1,110 @@
+/* Dialog container styles */
+.cdk-overlay-container {
+  z-index: 1000 !important; /* Ensure dialog is above other elements */
+}
+
+/* Dialog title styles */
+mat-dialog-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px; /* Slightly larger title font */
+  color: #007bff; /* Use a primary color */
+  margin-bottom: 10px; /* Add spacing below the title */
+}
+
+/* Dialog content styles */
+mat-dialog-content {
+  text-align: center;
+  font-size: 16px;
+  margin: 20px 0; /* Add spacing for content readability */
+  color: #555; /* Softer text color for readability */
+}
+
+/* Dialog actions layout */
+mat-dialog-actions {
+  display: flex;
+  justify-content: space-between; /* Spread buttons for better spacing */
+  margin-top: 20px;
+  padding: 0 20px; /* Add padding for button alignment */
+}
+
+/* General button styles */
+.dialog-button {
+  width: 120px; /* Slightly larger buttons for better UX */
+  padding: 10px;
+  border-radius: 6px; /* Smooth rounded corners */
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease; /* Add a smooth hover effect */
+  text-transform: uppercase; /* Uniform button text */
+}
+
+/* Cancel button styles */
+.cancel-button {
+  background-color: #f44336; /* Red color for danger actions */
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #c62828; /* Darker red on hover */
+}
+
+/* Confirm button styles */
+.confirm-button {
+  background-color: #28a745; /* Green color for confirm actions */
+  color: white;
+}
+
+.confirm-button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+
+/* Center the dialog */
+.cdk-overlay-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  z-index: 1000; /* Ensure it is above other elements */
+}
+
+.mat-dialog-container {
+  margin: 0 auto; /* Center align */
+  max-width: 90%; /* Ensure responsiveness */
+  border-radius: 10px; /* Smooth rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  position: relative; /* Prevent shifting */
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+.cdk-overlay-container {
+  z-index: 1000 !important; /* Ensure it is above other elements */
+}
+/* Backdrop overlay for dialogs */
+.custom-backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* Dimmed overlay */
+}
+
+/* Dialog panel custom styles */
+.custom-dialog-panel {
+  border-radius: 10px; /* Smooth rounded edges */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  z-index: 1100; /* Ensure it's above other elements */
+}
+.cdk-overlay-pane {
+  align-items: flex-start !important; /* Ensures the dialog aligns at the top */
+  margin-top: 10px; /* Adds a gap between the top of the screen and the dialog */
+}
+
+.mat-dialog-container {
+  margin-top: -50px; /* Adjust as necessary */
+}
+
+.mat-dialog-container {
+  position: fixed !important;
+  top: 10% !important;
+  left: 50%;
+  transform: translateX(-50%);
+}

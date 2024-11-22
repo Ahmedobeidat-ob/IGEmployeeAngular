@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Backdrop overlay for dialogs */
+.custom-backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* Dimmed overlay */
+}
+
+/* Dialog panel custom styles */
+.custom-dialog-panel {
+  border-radius: 10px; /* Smooth rounded edges */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  z-index: 1100; /* Ensure it's above other elements */
+}
+.cdk-overlay-pane {
+  align-items: flex-start !important; /* Ensures the dialog aligns at the top */
+  margin-top: 10px; /* Adds a gap between the top of the screen and the dialog */
+}
+/* Global dialog styles */
+.cdk-overlay-container {
+  z-index: 9999 !important; /* Higher value */
+}
+
+.mat-dialog-container {
+  z-index: 10000 !important; /* Even higher value */
+}

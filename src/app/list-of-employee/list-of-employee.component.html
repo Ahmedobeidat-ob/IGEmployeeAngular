@@ -1,0 +1,58 @@
+
+  <h1>Employee List</h1>
+
+  <!-- Loading Spinner -->
+  <div *ngIf="isLoading" class="loading">
+    <p>Loading employees...</p>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+  <div  class="create-button-container">
+    <button *ngIf="isPopupOpen" (click)="navigateToCreatePage()" class="btn btn-create">
+      <i class="fas fa-plus"></i> Create Business Card
+    </button>
+  </div>
+
+  <!-- Employee Table -->
+  <table #employeeTable class="employee-table" *ngIf="!isLoading && employees.length; else noData">
+    <thead>
+      <tr>
+        <th hidden>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Address</th>
+        <th hidden>IsDeleted</th>
+        <th>Photo</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td hidden>{{ employee.employeeId }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.mobileNumber }}</td>
+        <td>{{ employee.homeAddress }}</td>
+        <td hidden>{{ employee.isDeleted ? 'Yes' : 'No' }}</td>
+        <td>
+          <img [src]="'https://localhost:7239/' + employee.photo" alt="Employee photo" />
+        </td>
+        <td *ngIf="isPopupOpen">
+          <button class="btn-create" (click)="openUpdateEmployeeDialog(employee.employeeId)">Update</button>
+          <button class="delete-btn" (click)="deleteEmployee(employee.employeeId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+    <!-- No Data Template -->
+  <ng-template #noData>
+    <p class="no-data">No employees available to display.</p>
+  </ng-template>
+
