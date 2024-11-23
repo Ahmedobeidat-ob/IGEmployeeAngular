@@ -1,3 +1,32 @@
+# IGEmployee Management System (Frontend in Angular)
+
+This is the frontend application for managing employees, developed using Angular. The application provides a user-friendly interface for interacting with the backend API, allowing users to create, update, view, delete, and manage employee records, including uploading and updating employee photos.
+
+# Features
+1. Employee Management
+Create Employee: Add a new employee with details such as name, email, phone number, address, and optional photo upload.
+View Employees: Display a paginated list of employees.
+Edit Employee: Update existing employee details, including the ability to change the photo.
+Soft Delete Employee: Mark an employee as deleted (soft delete) to keep the record without removing it entirely.
+Employee Details: View detailed information about a specific employee.
+2. Photo Management
+Upload Photo: Allows users to upload a photo for each employee while creating or editing their record.
+
+3. Responsive Design
+The application is fully responsive and works seamlessly across devices.
+
+Technologies Used
+Angular (v18.2.8)
+Angular Material: For UI components
+RxJS: For reactive programming
+TypeScript: Application logic
+CSS: Styling
+Prerequisites
+Node.js (v18 or later)
+Angular CLI (v18 or later)
+Backend API for Employee Management (built using .NET Core)
+
+
 # IGEmployee
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
